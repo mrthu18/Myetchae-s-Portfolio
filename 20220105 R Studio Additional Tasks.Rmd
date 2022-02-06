@@ -1,0 +1,69 @@
+# Additional Learning Tasks
+
+## 1.Write an R program to create three vectors a, b, c with 5 integers. Combine the three vectors to become a 3×5 matrix where each column represents a vector. Print the content of the matrix. Plot a graph and label correctly.
+```{r}
+# create 3 vectors a,b,c with 5 integers
+a <- c(1,2,3,4,5)
+b <- c(6,7,8,9,10)
+c <- c(2,4,6,8,10)
+abc_matrix <- matrix(c(a,b,c), byrow=TRUE, nrow=3)
+print(abc_matrix)
+matplot(abc_matrix, type='p', xlab='Row of the abc matrix', ylab='Column of the abc matrix')
+```
+
+## 2. Write a R program to create a Data frames which contain details of 5 employees and display the details. (Name, Age, Role and Length of service).
+```{r}
+Name <- c('Bates', 'Cornell', 'Daniels', 'Jackson', 'Somers')
+Age <- c(30, 41, 40, 31, 35)
+Role <- c('Accountant', 'Analyst', 'Supervisor', 'Manager', 'Director')
+Length_of_service_years <- c(5, 2, 5, 5, 10)
+
+employees <- data.frame(Name, Age, Role, Length_of_service_years)
+print(employees)
+```
+
+## 3. Import the GGPLOT 2 library and plot a graph using the qplot function. X axis is the sequence of 1:20 and the y axis is the x ^ 2. Label the graph appropriately. install.packages("ggplot2", dependencies = TRUE)
+```{r}
+x <- 1:20
+y = x^2
+library(ggplot2)
+qplot(x, y, geom=c('point', 'line'))
+
+```
+
+## 4. Create a simple bar plot of five subjects
+```{r}
+library(ggplot2)
+Name <- c('Bates', 'Cornell', 'Daniels', 'Jackson', 'Somers')
+Age <- c(30, 41, 40, 31, 35)
+Role <- c('Accountant', 'Analyst', 'Supervisor', 'Manager', 'Director')
+Length_of_service_years <- c(5, 2, 5, 5, 10)
+employees <- data.frame(Name, Age, Role, Length_of_service_years)
+
+ggplot(employees) +
+  geom_col(aes(Name, Length_of_service_years))
+```
+
+## 5. Write a R program to take input from the user (name and age) and display the values.
+```{r}
+name <- readline("Hi, I'd like to know more about you. What's your name?")
+name_reply <- paste("Nice to meet you", name, "!") 
+print(name_reply)
+age <- readline("And how old are you?")
+age_reply <- paste("I hope I would be able to live till", age, "years old as well!")
+print(age_reply)
+```
+
+## 6. Write a R program to create a sequence of numbers from 20 to 50 and find the mean of numbers from 20 to 50 and sum of numbers.
+```{r}
+numbers <- 20:50
+print(mean_of_numbers <- mean(numbers))
+print(sum_of_numbers <- sum(numbers))
+```
+
+## 7. Write a R program to create a vector which contains 10 random integer values between -50 and +50
+```{r}
+sample(-50:50, 10, replace=FALSE)
+```
+
+

@@ -1,0 +1,26 @@
+```{r}
+# Check the available datasets
+data()
+# Import ggplot2 library for qplot
+library(ggplot2)
+```
+
+```{r}
+# Import mtcars dataset
+data("mtcars")
+df <- mtcars[, c("mpg", "cyl", "disp", 'wt')]
+head(df)
+# Plotting for the mtcars2 for the effect weight has on the efficiency of the car
+qplot(wt, mpg, data=mtcars, geom = c("point", "smooth"))
+```
+
+```{r}
+# 2nd attempt with a different dataset
+# Plotting to differentiate the effects of different diets on the weight of the chick with time
+data("ChickWeight")
+df_chick <- ChickWeight[, c("Chick", "weight", "Time", "Diet")]
+head(df_chick)
+qplot(Chick, weight, data=df_chick, color=Diet)
+qplot(Time, weight, data=df_chick, geom=c("boxplot", "jitter"), color=Diet)
+```
+
