@@ -1,2 +1,2 @@
-# TTA-Home-Learning
-Completed home learning tasks
+# Myetchae's Data Portfolio
+SQL - Python - R
